@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#101a1c" />
+  <title>LOWTIDE: Signal Break</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game"></div>
+  <div class="grain"></div>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">L</span><div><b>LOWTIDE</b><small>COASTAL OPERATIONS</small></div></div>
+    <div class="mission-tag"><i></i> OPERATION SIGNAL BREAK</div>
+    <div class="top-right"><span id="clock">06:42</span><span class="divider"></span><span>SECTOR 04 · NORTH CAUSEWAY</span></div>
+  </header>
+  <section class="mission-panel">
+    <div class="eyebrow">PRIMARY OBJECTIVE <span id="objective-count">01 / 03</span></div>
+    <h1 id="objective-title">RE-LIGHT THE BEACON</h1>
+    <p id="objective-copy">Secure the relay uplink. Hold the perimeter until the signal locks.</p>
+    <div class="progress-track"><div id="capture-fill"></div></div>
+    <div class="objective-foot"><span id="capture-label">UPLINK CHARGING</span><span id="distance">— M</span></div>
+  </section>
+  <div class="compass"><span>N</span><div class="compass-line"></div><span id="bearing">NE</span></div>
+  <div class="objective-marker" id="world-marker"><span class="marker-diamond">◆</span><span id="marker-distance">RELAY 01</span></div>
+  <div class="status-left">
+    <div class="status-card"><span class="label">VITALS</span><div class="health-row"><span class="cross">+</span><div class="health-track"><i id="health-fill"></i></div><b id="health-number">100</b></div></div>
+    <div class="status-card squad"><span class="label">SQUAD NET</span><div class="squad-row"><span class="avatar">R</span><span>RANGER-2</span><span class="online">● LINKED</span></div></div>
+  </div>
+  <div class="weapon-card"><div class="weapon-name">M4A1 <span>CARBINE</span></div><div class="ammo"><strong id="ammo">30</strong><span>/ <i id="reserve-ammo">120</i></span><div class="ammo-icon">▥</div></div><div class="weapon-hint">[ R ] RELOAD</div></div>
+  <div class="ability" id="pulse-card"><div class="ability-icon">⌁</div><div><b>SONAR PULSE <kbd>Q</kbd></b><small id="pulse-state">READY · REVEALS HOSTILES</small></div><div class="cooldown-ring" id="pulse-ring"><span>Q</span></div></div>
+  <div class="toast" id="toast">SIGNAL ACQUIRED</div>
+  <div class="hitmarker" id="hitmarker">×</div>
+  <div class="crosshair"><i></i><i></i><i></i><i></i><b></b></div>
+  <div class="damage-vignette" id="damage-vignette"></div>
+  <div class="controls-hint" id="controls-hint"><span>W A S D</span> MOVE <span>SHIFT</span> SPRINT <span>CLICK</span> FIRE</div>
+  <div class="overlay" id="intro">
+    <div class="intro-card">
+      <div class="intro-kicker"><span></span> FIELD BRIEFING · 06:42 LOCAL</div>
+      <h2>THE TIDE<br /><em>IS TURNING.</em></h2>
+      <p>Three relay towers. One evacuation window. The causeway floods in three minutes—take the uplinks before the water cuts your route.</p>
+      <div class="brief-stats"><div><b>03</b><small>RELAY SITES</small></div><div><b>03:00</b><small>TIME TO HIGH TIDE</small></div><div><b>Q</b><small>SONAR PULSE</small></div></div>
+      <button id="deploy">DEPLOY TO CAUSEWAY <span>→</span></button>
+      <small class="input-note">WASD MOVE · MOUSE AIM · CLICK FIRE · R RELOAD · Q SONAR</small>
+    </div>
+  </div>
+  <div class="overlay hidden" id="end-screen"><div class="intro-card end-card"><div class="intro-kicker" id="end-kicker"><span></span> MISSION REPORT</div><h2 id="end-title">SIGNAL<br /><em>RESTORED.</em></h2><p id="end-copy">The evacuation channel is open. Good work, Ranger.</p><button id="restart">RUN IT AGAIN <span>↻</span></button></div></div>
+  <div class="touch-controls" id="touch-controls"><div class="move-pad"><button data-move="forward">▲</button><div><button data-move="left">◀</button><button data-move="back">▼</button><button data-move="right">▶</button></div></div><div class="touch-actions"><button id="touch-pulse">⌁</button><button id="touch-fire">FIRE</button><button id="touch-reload">↻</button></div></div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
